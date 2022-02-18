@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <Link to="/">
-        <img src="./asssets/logo.svg" alt="logo"/>
+        <img src="./asssets/logo.svg" alt="logo" />
       </Link>
     </header>
   );
