@@ -1,24 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { Normalize } from 'styled-normalize';
-import Header from './components/header/Header';
+import { Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyle';
-import theme from './theme';
+import Header from './components/Header';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Normalize />
-        <GlobalStyle />
-        <Header />
-        <Routes>
-          <Route path="/search">Search</Route>
-          <Route path="/">Home</Route>
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <>
+      <GlobalStyle />
+      <Header />
+
+      <main>
+        <Switch>
+          <Route path="/how-it-works">
+            <h1>How it works</h1>
+          </Route>
+          <Route path="/about">
+            <h1>About</h1>
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </main>
+    </>
   );
 }
 
